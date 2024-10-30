@@ -1,0 +1,213 @@
+{% comment %} {% extends 'base.html' %}
+<head>
+    
+    {% block title %}Home{% endblock title %}
+      
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'css/weekly_report.css' %}">
+</head>
+{% block body %}
+
+    <h1>Weekly Report for Student ID: {{ student_id }}</h1>
+    <div class="pie animate" style="--p:{{ percentage }}%;--c:white"> {{ percentage }}</div>
+    <p>Present Count: {{ present_count }}</p>
+    <p>Total Count: {{ total_count }}</p>
+    <p>Percentage: {{ percentage }}%</p>
+{% endblock body %}  {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">   
+<title>home page</title> 
+<link rel="stylesheet" href="weekly_report.css">
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body,html{
+    background: rgb(148, 182, 237);
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  header{
+    position: absolute;
+    top: o;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+  }
+  .logo{
+    font-size: 2em;
+    color: rgb(63, 90, 201);
+    pointer-events: none;
+    margin-right: 750px;
+  }
+  
+  .navigation a{
+    text-decoration: none;
+    color: rgb(63, 90, 201);
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+  
+  .navigation a:hover,
+  .navigation a.active {
+    background: rgb(63, 90, 201);
+    color: rgb(148, 182, 237);
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body,html{
+    background: rgb(148, 182, 237);
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  header{
+    position: absolute;
+    top: o;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+    height:100px;
+  }
+  .logo{
+    font-size: 2em;
+    color: rgb(63, 90, 201);
+    pointer-events: none;
+    margin-right: 750px;
+  }
+  
+  .navigation a{
+    text-decoration: none;
+    color: rgb(63, 90, 201);
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+    margin-top:12px;
+  }
+  
+  .navigation a:hover,
+  .navigation a.active {
+    background: rgb(63, 90, 201);
+    color: rgb(148, 182, 237);
+  }
+  @property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+  }
+  
+  .pie {
+    --p:20;
+    --b:50px;
+    --c:darkred;
+    --w:400px;
+  
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    margin-left: 580px;
+    margin-top: 120px;
+    place-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  .pie:before,
+  .pie:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  .pie:before {
+    inset: 0;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .pie:after {
+    inset: calc(50% - var(--b)/2);
+    background: var(--c);
+    transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+  .animate {
+    animation: p 1s .5s both;
+  }
+  .no-round:before {
+    background-size: 0 0, auto;
+  }
+  .no-round:after {
+    content: none;
+  }
+  @keyframes p{
+    from{--p:0}
+  }
+  .data{
+    margin-top:90px;
+    margin-left:30px;
+  }
+  .logoo img{
+    {% comment %} position:fixed; {% endcomment %}
+    height:60px;
+    width:auto;
+    justify-items:center;
+    justify-content:center
+    display:center;
+    margin-bottom:40px;
+    {% comment %} margin-right: 850px; {% endcomment %}
+}   
+.logoo{
+    color: #fff;
+    pointer-events: none;
+    margin-right: 750px;
+}
+</style>
+</head>
+    <body style="background-color: rgb(167, 197, 243);">
+      
+        <header>
+          <href="#" class="logoo"><img  src="{% static "images/l.png" %}">
+            <nav class="navigation">
+            <a href="#" class="active">About Us</a>
+            <a href="#" >Login</a>
+            <a href="#" >Settings</a>
+            <a href="#" >Contact us</a>
+            </nav>
+        </header>
+        <div class="data">
+          <h1>Weekly Report for Student ID: {{ student_id }}</h1>
+          <p>Present Count: {{ present_count }}</p>
+          <p>Total Count: {{ total_count }}</p>
+          <p>Percentage: {{ percentage }}%</p>
+        </div>
+        
+<div class="pie animate" style="--p:{{ percentage }};--c:white"> {{ percentage }}%</div>
+<script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

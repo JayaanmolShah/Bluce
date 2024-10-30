@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EMAIL</title>
+	<style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body,html{
+            background: rgba(108,185,231,255);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            z-index: 100;
+            height:100px;
+            background:#467db5;
+        }
+        {% comment %} .na{
+            font-size: 2em;
+            color: #fff;
+            margin-right: 750px;
+        } {% endcomment %}
+        .logo{
+            font-size: 2em;
+    color: #fff;
+    pointer-events: none;
+    margin-right: 750px;
+        }
+        
+        .navigation a{
+            text-decoration: none;
+            color: #fff;
+            padding: 2px 20px;
+            border-radius: 20px;
+            margin-right 4px;
+            font-weight: 600;
+            margin-top:12px;
+        }
+        
+        .navigation a:hover,
+        .navigation a.active {
+            background:rgba(108,185,231,255);
+            color: navy;
+        }
+        .dropbtn {
+            background-color: #4a74c1;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+          }
+          
+          .dropdown {
+            position: relative;
+            display: inline-block;
+            height: 110px;
+            width: 40px;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(21, 26, 118, 0.2);
+            z-index: 1;
+          }
+          
+          .dropdown-content a {
+            color: rgb(45, 51, 133);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+          
+          .dropdown-content a:hover {background-color: #ddd;}
+          
+          .dropdown:hover .dropdown-content {display: block;}
+          
+          .dropdown:hover .dropbtn {background-color: #4a74c1;}
+          .wrapper {
+            background: #f7f7f7;
+            width: 400px;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 15px 25px rgba(16, 32, 113, 0.884);
+            margin-top: 190px;
+            margin-left: 570px;
+        }
+        .btn{
+            width: 90px;
+            height: 40px;
+            background-color: rgb(8, 38, 83);
+            color: #f1f1f1;
+            border-radius: 10px;
+            margin-left: 95px;
+            margin-top: 40px;
+            border: none;
+        }
+        .btn:hover{
+        background-color: #105084;
+        color: #f1f1f1;
+        transform: scale(1.1);
+        }
+        .value{
+            height: 30px;
+            width: 270px;
+            background-color: #4a74c1;
+            color: #f1f1f1;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .l2{
+            font-size: large;
+            margin-left: 85px;
+           
+        }
+        .login img {
+            height: 200px;
+            width: auto;
+            margin: 0.5rem;
+            transition: all 0.3s;
+            border-radius: 10%;
+            margin-left: 45px;
+        }     
+        .logoo img{
+            {% comment %} position:fixed; {% endcomment %}
+            height:60px;
+            width:auto;
+            justify-items:center;
+            justify-content:center
+            display:center;
+            margin-bottom:40px;
+            {% comment %} margin-right: 850px; {% endcomment %}
+        }   
+        .logoo{
+            color: #fff;
+            pointer-events: none;
+            margin-right: 590px;
+        }   
+    </style>
+</head>
+<body style="background-color: rgba(108,185,231,255);">
+	<header>
+		<nav class="na">
+            <href="#" class="logoo"><img  src="{% static "images/l.png" %}">
+		</nav>
+		<nav class="navigation">
+        <a href="{% url 'teacher_options' subject %}" >Go To Options</a>
+		<a href="#" >About Us</a>
+		
+		<a href="/Contact us" >Contact us</a>
+        <a href="#" class="badge dropdown-toggle align-items-center p-2 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="rounded-circle me-1" width="25" height="25" src="{% static 'images/jb.jpeg' %}" alt="">
+           204006
+        </a>
+        <ul style="color:blue;" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="/Log out">Log out</a></li>
+        </ul>
+		</nav>
+	</header>
+    <div class="wrapper">
+        <form method="post" action="{% url 'get_email' subject %}">
+            {% csrf_token %} 
+    <div class="login">
+        <img src="{% static "images/email.jpeg" %}">
+    </div>
+      <label class="l2">ENTER EMAIL: </label>
+      <br>
+      <input  class="value" type="email" name="email" id="value" placeholder="" required>
+      <br>
+      <button class=btn type="submit" >SEND</button>
+    </form>
+    <script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script>
+</div>
+</body>
+</html>

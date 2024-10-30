@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Options</title>
+	<link rel="stylesheet" type="text/css" href="card.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body,html{
+            background: rgba(108,185,231,255);
+            min-height: 100vh;
+            overflow: hidden;
+            overflow-y:scroll;
+        }
+        header{
+            position: fixed;
+            top: o;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            z-index: 100;
+            height:100px;
+            background:#467db5;
+        }
+       
+        
+        .navigation a{
+            text-decoration: none;
+        color: #fff;
+        padding: 2px 20px;
+        border-radius: 20px;
+        margin-right 4px;
+        margin-top:12px;
+        font-weight: 600;
+        }
+        .badge{
+            width:120px;
+          }
+        .navigation a:hover,
+        .navigation a.active {
+            background:rgba(108,185,231,255);
+            color: navy;
+        }
+        
+        /* khhgdcfw */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+       
+        
+        h1{
+            text-align: center;
+            margin-top: 170px;
+            font-size: 3.7rem;
+            color: #ffffff;
+        }
+        
+        .all-login{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .login{
+            overflow: hidden;
+            background: #ffffff;
+            color: #3772e8;
+            text-align: center;
+            width: 290px;
+            height: 400px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1.2rem;
+            margin: 2rem;
+        }
+        
+        .login .login-title, .login .login-price{
+            font-size: 18px;
+        }
+        
+        .login:hover img{
+            scale:  1.1;
+        }
+        
+        .login:hover {
+            box-shadow: 5px 15px 25px #102e5b;
+        }
+        
+        .login img {
+            height: 200px;
+            margin: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .login a:link, .login a:visited{
+            color: #ececec;
+            display: inline-block;
+            text-decoration: none;
+            background-color: #2c3e50;
+            padding: 1.2rem 3rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .login a:hover{
+            transform: scale(1.1);
+        }
+
+        .no-round:before {
+            background-size: 0 0, auto;
+          }
+          .no-round:after {
+            content: none;
+          }
+          @keyframes p{
+            from{--p:0}
+          }
+           /* hvkgl */
+           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        .container{
+            max-width: 1170px;
+            margin:auto;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        ul{
+            list-style: none;
+        }
+        .footer{
+            background-color: #132551;
+            padding: 70px 0;
+            margin-top: 180px;
+        }
+        .footer-col{
+           width: 25%;
+           padding: 0 15px;
+        }
+        .footer-col h4{
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+        .footer-col h4::before{
+            content: '';
+            position: absolute;
+            left:0;
+            bottom: -10px;
+            background-color: #97c1f4;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+        .footer-col ul li:not(:last-child){
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a{
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+            color: #ffffff;
+            padding-left: 8px;
+        }
+        .footer-col .social-links a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin:0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover{
+            color: #24262b;
+            background-color: #ffffff;
+        }
+        
+        /*responsive*/
+        @media(max-width: 767px){
+          .footer-col{
+            width: 50%;
+            margin-bottom: 30px;
+        }
+        }
+        @media(max-width: 574px){
+          .footer-col{
+            width: 100%;
+        }
+        }
+        .footer-col a{
+            font-size: 16px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+          text-align: justify;
+        }
+        .logoo img{
+            {% comment %} position:fixed; {% endcomment %}
+            height:60px;
+            width:auto;
+            justify-items:center;
+            justify-content:center
+            display:center;
+            margin-bottom:40px;
+            {% comment %} margin-right: 850px; {% endcomment %}
+        }   
+        .logoo{
+            color: #fff;
+            pointer-events: none;
+            margin-right: 750px;
+        }
+        
+    </style>
+</head>
+<body style="background-color: rgba(108,185,231,255);">
+    {% load static %}
+	<header>
+        
+		<nav class="na">
+            <a href="/" class="logoo"><img  src="{% static "images/l.png" %}"></a>
+		</nav>
+		<nav class="navigation">
+		<a href="/Contact us" >Contact us</a>
+        <a href="#" class="badge  align-items-center p-2 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
+        <img class="rounded-circle me-1" width="25" height="25" src="{% static 'images/user__icon2.jpeg' %}" alt="">
+      <span>Hello User.</span>
+    </a>
+		</nav>
+	</header>
+
+	<section class="products">
+		<h1>LOGIN</h1>
+		<div class="all-login">
+			<div class="login">
+				<img src="{% static 'images/student.jpg' %}">
+				<div class="login-info">
+					<h4 class="login-title">Student Login
+					</h4>
+                    <a class="login-btn" href="/Student">GO-TO LOGIN</a>
+				</div>
+			</div>
+			<div class="login">
+				<img src="{% static 'images/teach.jpg' %}">
+				<div class="login-info">
+					<h4 class="login-title">Administrator Login
+					</h4>
+                    <a class="login-btn" href="/accounts/login/">GO-TO LOGIN</a>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>NAVBAR</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SERVICES</h4>
+                    <ul>
+                        <li><a href="#">Bluetooth Attendance</a></li>
+                        <li><a href="#">Weekly Report</a></li>
+                        <li><a href="#">Monthly Report</a></li>
+                        <li><a href="#">Custom Report</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-envelope-open-text" ></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>BLUCE</h4>
+                    
+                        <a style="color:#ffffff;" >Bluce is a Bluetooth attendance web application that utilizes modern 
+                            technology to make attendance tracking more efficient and convenient. The application
+                             allows users to register their mobile devices as attendance markers, making it easy for 
+                             them to mark their attendance with a simple tap.</a>
+                    
+                    <br>
+                </div>
+                
+            </div>
+        </div>
+        <script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script>
+    </footer>
+</body>
+</html>

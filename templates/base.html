@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> {% block title %}{% endblock title %} Bluce</title>
+    <style>
+      
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body,html{
+        background: rgba(108,185,231,255);
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    header{
+        position: absolute;
+        top: o;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 100;
+    }
+    .na{
+      font-size: 2em;
+      color: rgb(63, 90, 201);
+      margin-right: 750px;
+  }
+    .logo{
+        font-size: 2em;
+        color: rgb(63, 90, 201);
+        pointer-events: none;
+        margin-right: 750px;
+    }
+    
+    .navigation a{
+        text-decoration: none;
+        color: rgb(63, 90, 201);
+        padding: 6px 15px;
+        border-radius: 20px;
+        margin: 0 10px;
+        font-weight: 600;
+    }
+    
+    .navigation a:hover,
+    .navigation a.active {
+        background: rgb(63, 90, 201);
+        color: rgb(148, 182, 237);
+    }
+    </style>
+  </head>
+  <body class="body">
+
+    
+    <header>
+      <nav class="na">
+      <h4><a href="/" >Bluce</a></h4>
+      </nav>
+      <nav class="navigation">
+      <a href="#" >About Us</a>
+      <a href="/Log in" >Login</a>
+      <a href="#" >Settings</a>
+      <a href="/Contact us" >Contact us</a>
+      </nav>
+    </header>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+   <br>
+   <script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script>
+    {% block body %}{% endblock body %}
+  </body>
+</html> 

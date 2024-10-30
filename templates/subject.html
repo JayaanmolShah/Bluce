@@ -1,0 +1,235 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <script src="../assets/js/color-modes.js"></script>
+<link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Select Subject</title>
+    <style>
+      
+            *{
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: 'Poppins', sans-serif;
+          }
+          body,html{
+              background: rgba(108,185,231,255);
+              min-height: 100vh;
+              overflow: hidden;
+              overflow-y:scroll;
+          }
+          header{
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              padding: 30px 100px;
+              display: flex;
+              z-index: 100;
+              height:100px;
+              background:#467db5;
+          }
+          {% comment %} .na{
+            font-size: 2em;
+            color: #fff;
+            margin-right: 890px;
+        } {% endcomment %}
+          .logo{
+              font-size: 2em;
+              color: #fff;
+              pointer-events: none;
+              margin-right: 750px;
+          }
+          
+          .navigation a{
+              text-decoration: none;
+              color: #fff;
+              padding: 2px 20px;
+              border-radius: 20px;
+              margin-right 4px;
+              font-weight: 600;
+              margin-top:12px;
+          }
+          
+          .navigation a:hover,
+          .navigation a.active {
+              background:rgba(108,185,231,255);
+              color: navy;
+          }
+          .a1{
+            margin-right: 5px;
+          
+        }
+        
+          .subject{
+            margin-top:90px;
+            margin-left:30px;
+          }
+          .container {
+            padding: 10px;
+            height: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top:380px;
+            margin-left: 150px;
+          }
+          .form-check-label{
+        margin-left: 20px;
+          }
+          .btn{
+          width: 300px;
+            margin-left: 140px;
+            margin-right: 140px;
+            margin-top: 60px;
+            background-color: rgb(26, 33, 69);
+            color: aliceblue;
+            border: none;
+            border-radius: 5px;
+          }
+        .btn:hover{
+        background-color: rgb(28, 114, 190);
+        color: rgb(205, 219, 247);
+        transform: scale(1.1);
+        }
+        .buttoon{
+          margin-top: 20px;
+          ;}
+        .btun{
+          width:90px;
+          height: 40px;
+          background-color: rgb(26, 33, 69);
+            color: aliceblue;
+            margin-left: 550px;
+            border: none;
+            border-radius: 5px;
+        }
+        .btun:hover{
+          background-color: rgb(28, 114, 190);
+        color: rgb(205, 219, 247);
+        transform: scale(1.1)
+        }
+        .badge{
+          width:120px;
+        }
+        .list-group-item{
+          padding:5px 5px;
+          width:343px;
+        }
+        .logoo img{
+          {% comment %} position:fixed; {% endcomment %}
+          height:60px;
+          width:auto;
+          justify-items:center;
+          justify-content:center
+          display:center;
+          margin-bottom:40px;
+          {% comment %} margin-right: 850px; {% endcomment %}
+      }   
+      .logoo{
+          color: #fff;
+          pointer-events: none;
+          margin-right: 750px;
+      }
+      
+    </style>
+  </head>
+  <body class="body">
+
+    {% load static %}
+    <header>
+      <nav class="na">
+        <href="#" class="logoo"><img  src="{% static "images/l.png" %}">
+      </nav>
+      <nav class="navigation">
+      <a href="/Contact us" >Contact us</a>
+      <a href="#" class="badge dropdown-toggle align-items-center p-2 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <img class="rounded-circle me-1" width="25" height="25" src="{% static 'images/jb.jpeg' %}" alt="">
+       204006
+    </a>
+    <ul style="color:blue;" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <li><a class="dropdown-item" href="/Log out">Log out</a></li>
+    </ul>
+      </nav>
+    </header>
+    
+   
+<div class="container">
+  
+  <form method="post" action="/subject">
+    {% csrf_token %}
+      
+  <div class="btn-group">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+     Semester - V
+    </button>
+    <ul class="dropdown-menu">
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="Computer_Networks" value="Computer_Networks" name="subject_checkbox" />
+          <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Computer Networks</label>
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="Industrial_Training" value="Industrial_Training" name="subject_checkbox" />
+          <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Industrial Training</label>
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="Java" value="Java" name="subject_checkbox" />
+          <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Java Programming</label>
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="Multimedia_Techniques" value="Multimedia_Techniques" name="subject_checkbox" />
+          <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Multimedia Techniques</label>
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="PHP_Programming" value="PHP_Programming" name="subject_checkbox"/>
+          <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">PHP Programming</label>
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="Software_Programming" value="Software_Programming" name="subject_checkbox" />
+        <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Software Programming</label>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="btn-group">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+     Semester - VI
+    </button>
+    <ul class="dropdown-menu">
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="Advanced_Java_Programming"  value="Advanced_Java_Programming" name="subject_checkbox"/>
+    <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Advanced Java Programming</label>
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="Python"  value="Python" name="subject_checkbox"/>
+    <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Python Programming</label>
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="Network_Administration"  value="Network_Administration" name="subject_checkbox"/>
+    <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Network Administration</label>
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" id="IOM"  value="IOM" name="subject_checkbox"  />
+        <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">IOM</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input" type="checkbox" id="Business_Communication" value="Business_Communication" name="subject_checkbox" />
+    <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Business Communication</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input" type="checkbox" id="Linux"  value="Linux" name="subject_checkbox" />
+    <label class="form-check-label" name="subject_checkbox" for="subject_checkbox">Linux Programming</label>
+  </li>
+  </ul>
+  </div>
+  
+  <div class="buttoon justify-content-center py-5">
+    <button class="btun" type="submit">SUBMIT</button>
+</div>
+</form>
+<script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html> 

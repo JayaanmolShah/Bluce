@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">   
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">   
+<title>home page</title> 
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body,html{
+        background: rgb(148, 182, 237);
+        min-height: 100vh;
+    }
+    header{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px 100px;
+      display: flex;
+      z-index: 100;
+      height:100px;
+      background:#467db5;
+    }
+    .logo{
+      font-size: 2em;
+      color: #fff;
+      pointer-events: none;
+      margin-right: 750px;
+    }
+    
+    .navigation a{
+      text-decoration: none;
+      color: #fff;
+      padding: 2px 20px;
+      border-radius: 20px;
+      margin-right 750px;
+      font-weight: 600;
+      margin-top:12px;
+    }
+    
+    .navigation a:hover,
+    .navigation a.active {
+      background:rgba(108,185,231,255);
+      color: navy;
+    }
+    .modal{
+      margin-top: 230px;
+      color: rgb(68, 139, 206);
+       text-align: center;
+    }
+    
+    .content-table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      min-width: 400px;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(244, 229, 229, 0.15);
+      margin-top: 50pxpx;
+      margin-left: 250px;
+      border: 1px solid black;
+    }
+    
+    .content-table thead tr {
+        background-color: #1069b1;
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+        font-size: larger;
+        padding: 10px 10px;
+    }
+    
+    .content-table th
+    {color: aliceblue;
+        padding: 20px 20px;
+        border: 1px solid black;}
+    
+    
+    .content-table td {
+        border: 1px solid black;
+        padding: 2px 2px;
+       color: aliceblue;
+       font-size: large;
+    }
+    
+    .content-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    
+    .content-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+    
+    .content-table tbody tr:last-of-type {
+        border-bottom: 2px solid #084cb3;
+    }
+    
+    .content-table tbody tr.active-row {
+        font-weight: bold;
+        color: #104293;
+    }
+    tr:hover{
+        transform: scale(1.02);
+        box-shadow: 0 0 20px rgba(244, 229, 229, 0.15);
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      
+    .switch input {display:none;}
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+      
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      .btn{
+        background: #1069b1;
+        color: #ebecef;
+        border-radius: 10px;
+        height: 40px;
+        width: 200px;
+        font: bold;
+        font-size:medium;
+        margin-left: 690px;
+        border: none;
+        margin-top:5px;
+    }
+    .btn2{
+      background: #1069b1;
+      color: #ebecef;
+      border-radius: 10px;
+      height: 40px;
+      width: 160px;
+      font-size:medium;
+      margin-left: 10px;
+      border: none;
+      top:60px;
+    }
+    .btn:hover{
+        background-color: #e4eaef;
+        color: rgb(12, 93, 206);
+        transform: scale(1.1);
+    }
+    .btn2:hover{
+        background-color: #ebf1f5;
+        color: rgb(18, 103, 222);
+        transform: scale(1.1);
+        
+    }
+    .btn3{
+      background: #1069b1;
+      color: #ebecef;
+      border-radius: 10px;
+      height: 40px;
+      width: 160px;
+      font-size:medium;
+      margin-left: 10px;
+      border: none;
+      top:60px;
+  }
+  .btn3:hover{
+      background-color: #e4eaef;
+      color: rgb(12, 93, 206);
+      transform: scale(1.1);
+  }
+  .btn4{
+    background: #1069b1;
+    color: #ebecef;
+    border-radius: 10px;
+    height: 40px;
+    {% comment %} width: 160px; {% endcomment %}
+    font-size:medium;
+    margin-left: 0px;
+    border: none;
+    top:60px;
+}
+.btn:hover{
+    background-color: #e4eaef;
+    color: rgb(12, 93, 206);
+    transform: scale(1.1);
+}
+    .container h4{
+      margin-left:690px;
+    }
+    .logoo img{
+      {% comment %} position:fixed; {% endcomment %}
+      height:60px;
+      width:auto;
+      justify-items:center;
+      justify-content:center
+      display:center;
+      margin-bottom:40px;
+      {% comment %} margin-right: 850px; {% endcomment %}
+  }   
+  .logoo{
+      color: #fff;
+      pointer-events: none;
+      margin-right: 590px;
+  }
+</style>
+</head>
+<body style="background-color:rgba(108,185,231,255);">
+      
+        <header>
+            <nav class="na">
+              <href="#" class="logoo"><img  src="{% static "images/l.png" %}">
+                </nav>
+                <nav class="navigation">
+                <a href="#" >About Us</a>
+                <a href="/Log in" >Login</a>
+                <a href="/Contact us" >Contact us</a>
+                <a href="#" class="badge  align-items-center p-2 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
+                  <img class="rounded-circle me-1" width="25" height="25" src="{% static 'images/jb.jpeg' %}" alt="">
+                 Badge Text
+              </a>
+                </nav>
+        </header>
+        <br><br><br><br><br><br>
+        <div class="box">
+          <div class="container">
+        <h4 style="color:#fff; font-size:2rem;margin-left:550px;" ><b>HEAD COUNT<b></h4>
+        <h4 style="margin-left:400px;"><b style="color:#46923c;">PRESENT COUNT: {{p_count}} </b> <b style="color:#b71c1c;"> ABSENT COUNT: {{a_count}}</b></h4>
+          </div>
+        </div>
+        <form method="post" action="{% url 'manually_change' subject a_count p_count %}">
+            {% csrf_token %}
+    <table class="content-table table-hover">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Roll Number</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Attendance Status</th>
+            <th>Attendance Change</th>
+          </tr>
+        </thead>
+        <tbody>
+    {% for attendance in recent_attendance%}
+    {%if attendance.is_present %}
+          <tr style="background-color:#6fad95;">
+            <td>{{ attendance.Name }}</td>
+            <td>{{attendance.Roll_number}}</td>
+            <td>{{attendance.date}}</td>
+            <td>{{attendance.time}}</td>
+            <td>{%if attendance.is_present %}
+            Present
+            {% else %}
+            Absent
+            {% endif %}</td>
+            <td><label class="switch">
+                <input type="checkbox" name="{{ attendance.Name }}" {% if attendance.is_present %}checked{% endif %}>
+                <span class="slider round"></span>
+              </label>
+            </td>
+          </tr>
+    {% else %}
+          <tr style="background-color:#e66391;">
+            <td>{{ attendance.Name }}</td>
+            <td>{{attendance.Roll_number}}</td>
+            <td>{{attendance.date}}</td>
+            <td>{{attendance.time}}</td>
+            <td>{%if attendance.is_present %}
+            Present
+            {% else %}
+            Absent
+            {% endif %}</td>
+            <td><label class="switch">
+                <input type="checkbox" name="{{ attendance.Name }}" {% if attendance.is_present %}checked{% endif %}>
+                <span class="slider round"></span>
+              </label>
+            </td>
+          </tr>
+    {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+      
+      <div class="buttoon">
+        <button style="margin-left:690px;width: 200px;" class="btn2" type="submit" name="Mark Manually">MARK MANUALLY</button>
+      </div>    </form>
+      <form method="post" action="{% url 'Reattend' subject a_count p_count %}">
+        {% csrf_token %}
+        <div class="buttoon">
+          <button class="btn" name="Refresh" type="submit">REFRESH</button>
+          </div>    
+        </form>
+
+          <form method="post" action="#">
+        {% csrf_token %}
+        <div class="buttoon">
+          <button id="modalButton" class="btn" name="Undo" type="submit">UNDO ATTENDACNE</button>
+          </div>
+          </form>
+          
+          <form method="post" action="{% url 'Confirm_attendance' subject %}">
+            {% csrf_token %}
+            <div class="buttoon">
+              <button class="btn" name="Undo" type="submit">CONFIRM</button>
+              </div>
+              </form>
+
+              <div id="myModal" class="modal " tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">DELETE WARNING</h5>
+                            <button id="option2" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          <p class="mb-0">Are you sure you want to delete the data?</p>
+                          <button id="option1" type="button" class="btnn btn-dark "><strong>DELETE</strong></button>
+                            <button id="option2" type="button" class="btnn btn-dark" data-bs-dismiss="modal">CANCEL</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+    
+              <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+              
+    
+              <script>
+                $(document).ready(function() {
+                    // Show modal when button is clicked
+                    $('#modalButton').click(function() {
+                        $('#myModal').modal('show');
+                    });
+                    $('#option1').click(function() {
+                        // Redirect to the destination page
+                        window.location.href = "{% url 'delete_latest_attendance' subject %}";
+                      });
+                    $('#option2').click(function() {
+                        $('#myModal').modal('hide');
+                    });
+                });
+              </script>
+
+              <script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

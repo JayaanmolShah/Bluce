@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="container">
+    <form method="post" action="/aa">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="Name" placeholder="Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">bluetooth_address</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="bluetooth_address" placeholder="bluetooth_address">
+        </div>3
+        
+        <button class="btn-btn-primary" type="submit">Submit</button>
+        
+</form>
+</div>
+<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+  </div>
+{% endblock body %}

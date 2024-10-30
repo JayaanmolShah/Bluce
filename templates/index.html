@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">   
+<title>home page</title> 
+<link rel="stylesheet" href="nav.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        background: rgba(108,185,231,255);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+    .logo{
+        font-size: 2em;
+        color: rgba(63,104,193,255);
+        pointer-events: none;
+        margin-right: 270px;
+    }
+
+    .navigation a{
+        text-decoration: none;
+        color: rgba(63,104,193,255);
+        padding: 6px 15px;
+        border-radius: 20px;
+        margin: 0 10px;
+        font-weight: 600;
+    }
+
+    .navigation a:hover,.navigation a.active{
+        background: rgba(63,104,193,255);
+        color: rgb(148, 182, 237);
+    }
+
+    .bluce{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #text{
+        position: absolute;
+        font-size: 5em;
+        color: rgb(16, 16, 62);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    }
+
+    .bluce img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    .sec{
+        position: relative;
+        background: rgba(49,132,184,255);
+        padding: 100px;
+    }
+
+    .sec h2{
+        font-size: 3em;
+        color: rgb(16, 16, 62);
+        margin-bottom: 10px;
+    }
+    .bluce h2{
+        color: rgb(152, 189, 248);;
+    }
+
+    .footer-container{
+        max-width: 1170px;
+        margin:auto;
+    height:560px;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer ul{
+        list-style: none;
+    }
+
+    .footer{
+        background-color: #132551;
+        padding: 30px 0;
+        margin-bottom:8px;
+        height:350px;
+    }
+    .footer-col{
+    width: 25%;
+    padding: 0 60px;
+    }
+    .footer-col h4{
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+    }
+    .footer-col h4::before{
+        content: '';
+        position: absolute;
+        left:0;
+        bottom: -10px;
+        background-color: #97c1f4;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+    }
+    .footer-col ul li:not(:last-child){
+        margin-bottom: 10px;
+    }
+    .footer-col ul li a{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    .footer-col ul li a:hover{
+        color: #ffffff;
+        padding-left: 8px;
+    }
+    .footer-col .social-links a{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255,255,255,0.2);
+        margin:0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+    .footer-col .social-links a:hover{
+        color: #24262b;
+        background-color: #ffffff;
+    }
+
+    /*responsive*/
+    @media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    }
+    @media(max-width: 574px){
+    .footer-col{
+        width: 100%;
+    }
+    }
+    .footer-col a{
+        font-size: 16px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+    text-align: justify;
+    }
+
+    #sec1{
+        height: 790px;
+        background: pink;
+        /* display: inline-block; */
+        width: 100%;
+    }
+    #sec2{
+        height: 790px;
+        background: rgb(155, 215, 248);
+        display: inline-block;
+        width: 100%;
+    }
+    #sec3{
+        height: 790px;
+        background: rgb(54, 110, 133);
+        display: inline-block;
+        width: 100%;
+    }
+    #sec4{
+        height: 790px;
+        background: rgb(36, 73, 92);
+        display: inline-block;
+        width: 100%;
+    }
+    #sec5{
+        height: 790px;
+        background: rgb(30, 55, 72);
+        display: inline-block;
+        width: 100%;
+    }
+    h1{
+        margin: 100px;
+        text-align: center;
+        padding: 0;
+    }
+    .ok{
+        margin-left: 90px;
+    }
+
+    .containerr{
+        margin-top: 0px;
+        display: grid;
+        height: 100vh;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        
+    }
+    .btn:hover{
+        transform: scale(1.1);
+    }
+    .btn::after{
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: #fff;
+    display: block;
+    transition: .5s ease-in-out;
+    }
+
+    .btn:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+    display: block;
+    }
+    .wrapper img{
+        max-width: 600px;
+        float: left;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+    .wrapper{
+        margin: 150px auto;
+        width: 90%;
+
+    }
+    .text{
+        color: #fff;
+    }
+    .text h2{
+        font-size: 42px;
+        color: rgb(28, 28, 58);
+    }
+    .text p{
+        margin-top: 10px;
+        font-size: 16px;
+        
+    }
+    img:hover{
+        transform: scale(1.1);
+    }
+
+    .text2{
+        color: #fff;
+    }
+    .text2 h2{
+        font-size: 42px;
+        color: rgb(28, 28, 58);
+    }
+    .text2 p{
+        margin-top: 10px;
+        font-size: 20px;
+        
+    }
+
+    .wrapper2{
+        margin: 150px auto;
+        width: 90%;
+
+    }
+    .wrapper2 img{
+        max-width: 600px;
+        float: right;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        margin-left: 15px;
+    }
+
+    .text3{
+        color: #fff;
+    }
+    .text3 h2{
+        font-size: 42px;
+        color:#fff;
+    }
+    .text3 p{
+        margin-top: 10px;
+        font-size: 24px;
+        
+    }
+    /* img:hover{
+        transform: scale(1.1);
+    } */
+
+    .wrapper3{
+        margin: 150px auto;
+        width: 90%;
+
+    }
+    .wrapper3 img{
+        max-width: 600px;
+        float: left;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        margin-right: 30px;
+    }
+
+    .wrapper4{
+        margin: 120px auto;
+        width: 90%;
+
+    }
+
+    .text4{
+        color: #fff;
+    }
+    .text4 h2{
+        font-size: 42px;
+        color:#fff;
+    }
+    .all-team{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .all-team h1{
+    font-size: 40px;
+    text-align: center;
+        margin-top: 170px;
+        font-size: 2rem;
+        color: #ffffff;
+    }
+
+    .team{
+        overflow: hidden;
+        background: #ffffff;
+        color: #3772e8;
+        text-align: center;
+        width: 290px;
+        height: 400px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1.2rem;
+        margin: 2rem;
+        margin-top: 20px;
+    }
+
+    .team .team-title, .team .team-price{
+        font-size: 18px;
+    }
+
+    .team img {
+        height: 200px;
+        margin: 1rem;
+        transition: all 0.3s;
+    }
+
+
+</style>
+</head>
+<body>
+    {% load static %}
+    <header>
+        <nav class="na">
+        <h4><a href="/" >Bluce</a></h4>
+        </nav>
+        <nav class="navigation">
+        <a href="#sec1" >About Us</a>
+        <a href="/Log in" >Login</a>
+        <a href="/Contact us" >Contact us</a>
+        </nav>
+      </header>
+<section class="bluce"> 
+    <img src="{% static 'images/img1.png' %}" id="img1">
+    <img src="{% static 'images/img2.png' %}" id="img2">
+    <img src="{% static 'images/img3.png' %}" id="img3">
+    <img src="{% static 'images/img4.png' %}" id="img4">
+    <img src="{% static 'images/img5.png' %}" id="img5">
+    <img src="{% static 'images/img6.png' %}" id="img6">
+    <h2 id="text">BLUCE ATTENDANCE</h2>
+    <img src="{% static 'images/img7.png' %}" id="img7">
+    <img src="{% static 'images/img8.png' %}" id="img8">
+</section> 
+<br><br><br><br>
+<div id ="sec1" class="containerr" >
+    <div style="background: rgba(49,132,184,255); justify-content: center; align-content: center; display: grid; border:1px solid; border-color:#fff; border-width:0px 5px 5px 0px;"><a href="#sec2"class="btn" type="button" style="border: none; color: aliceblue; text-decoration: none; font-size:xx-large;">BLUCE</a></div>
+    <div style="background: rgba(49,132,184,255); justify-content: center; align-content: center; display: grid; border:1px solid; border-color:#fff;  border-width:0px 0px 5px 5px;"><a href="#sec3"class="btn" type="button" style="border: none; color: aliceblue; text-decoration: none; font-size:xx-large;">FEATURES</a></div>
+    <div style="background: rgba(49,132,184,255); justify-content: center; align-content: center; display: grid; border:1px solid; border-color:#fff;  border-width:5px 5px 0px 0px;"><a href="#sec4"class="btn" type="button" style="border: none; color: aliceblue; text-decoration: none; font-size:xx-large;">SERVICES</a></div>
+    <div style="background: rgba(49,132,184,255); justify-content: center; align-content: center; display: grid; border:1px solid; border-color:#fff;  border-width:5px 0px 0px 5px;"><a href="#sec5"class="btn" type="button" style="border: none; color: aliceblue; text-decoration: none; font-size:xx-large;">TEAM</a></div>
+</div>
+<!-- <div class="buttoon  justify-content-center py-5">
+    <a href="#sec2"><button class="btn" type="button">REFRESH</button></a>
+<div id ="sec1">
+    <h1>okkokokokok</h1>
+</div> -->
+<div id ="sec2">
+    <div class="wrapper">
+        <img src="teach.jpg" alt="">
+        <div class="text">
+            <h2>BLUCE ATENDANCE</h2>
+            <P>Bluce is a Bluetooth attendance web application that utilizes modern technology to make attendance tracking more efficient and convenient. The application allows users to register their mobile devices as attendance markers, making it easy for them to mark their attendance with a simple tap.
+                The Scope of this proposed project is to enable attendance tracking through the use of Bluetooth technology. This includes the ability to register users, manage attendance records, generate reports, and integrate with other systems.
+                <pre>
+
+The audience of this system will be: 
+1. Students 
+2. Administrators
+                    
+
+                    <pre>
+                </P>
+        </div>
+    </div>
+</div>
+<div id ="sec3">
+    <div class="wrapper2">
+        <img src="teach.jpg" alt="">
+        <div class="text2">
+            <h2>FEATURES</h2>
+            <P>Bluce offers a range of features to help organizations and educational institutions manage attendance effectively. Some of our key features are :
+<pre>
+
+1. Bluetooth Connectivity
+                
+2. Real-time Attendance Monitoring
+                
+3. Customizable Attendance Reports
+                
+4. Automatic Attendance Notifications
+                
+5. User-friendly Interface
+                <pre>
+                </P>
+        </div>
+    </div>
+</div>
+</div>
+<div id ="sec4">
+    <div class="wrapper3">
+        <img src="teach.jpg" alt="">
+        <div class="text3">
+            <h2>SERVICES</h2>
+            <P>BLUCE OFFERS A WIDE RANGE OF SERVICES LISTED BELOW:
+<pre>
+<ul>
+<li>Admin’s Account</li>
+<li>Student’s Account</li>
+<li>Mark Attendance</li>
+<li>Weekly ReportPie Chart</li>
+<li>Monthly Report Pie Chart</li>
+<li>Exporting Excel Attendance Sheet via Gmail.</li>
+<li>Attendance Sheet</li>
+<li>Attendance Sheet with Calendar</li>
+</ul><pre>
+                </P>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div id ="sec5">
+    <div class="wrapper4">
+        <div class="text4">
+    <h2>TEAM MEMBERS</h2>
+    
+    <div class="all-team">
+        
+    <div class="team">
+        <img src="{% static 'images/Jaya_Shah.jpg' %}">
+        <div class="team-info">
+            <h4 class="team-title">JAYAANMOL SHAH
+        </div>
+    </div>
+
+    <div class="team">
+        <img src="{% static 'images/liji.jpg' %}">
+        <div class="team-info">
+            <h4 class="team-title">LIJI VERGHESE
+        </div>
+    </div>
+
+    <div class="team">
+        <img src="{% static 'images/prachi.jpeg' %}">
+        <div class="team-info">
+            <h4 class="team-title">PRAJAKTA PATIL
+            </h4>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<script>let text = document.getElementById('text');
+    let img4 = document.getElementById('img4');
+    let img3= document.getElementById('img3');
+    let img7= document.getElementById('img7');
+    let img8= document.getElementById('img8');
+    
+    window.addEventListener('scroll', () => {
+       let value = window.scrollY;
+    
+    //    text.style.marginBottom= value * 2.5 + 'px';
+       img4.style.top = value * -1.5 + 'px';
+       img3.style.left = value * 1.5 + 'px';
+       img2.style.left = value * 1.5 + 'px';
+       img7.style.left = value * -1.5 + 'px';
+       img8.style.left = value * -1.5 + 'px';
+       
+    
+    });
+    
+     </script>
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>NAVBAR</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#">Bluetooth Attendance</a></li>
+                    <li><a href="#">Weekly Report</a></li>
+                    <li><a href="#">Monthly Report</a></li>
+                    <li><a href="#">Custom Report</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-envelope-open-text" ></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>BLUCE</h4>
+                
+                    <a >Bluce is a Bluetooth attendance web application that utilizes modern 
+                        technology to make attendance tracking more efficient and convenient. The application
+                         allows users to register their mobile devices as attendance markers, making it easy for 
+                         them to mark their attendance with a simple tap.</a>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+</html>

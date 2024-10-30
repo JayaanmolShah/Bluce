@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+    {% load static %}
+  <head>
+    <script src="../assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>Student List</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/badges/">
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+          }
+          body,html{
+            background: rgba(108,185,231,255);
+            min-height: 100vh;
+            
+          }
+          header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            z-index: 100;
+            height:100px;
+            background:#467db5;
+          }
+         
+          .logo{
+            font-size: 2em;
+            color: #fff;
+            pointer-events: none;
+            margin-right: 720px;
+          }
+          
+          .navigation a{
+            text-decoration: none;
+            color: #fff;
+            padding: 2px 20px;
+            border-radius: 20px;
+            margin-right: 4px;
+            font-weight: 600;
+            margin-top:12px;
+          }
+          
+          .navigation a:hover,
+          .navigation a.active {
+            background: rgb(63, 90, 201);
+            color:navy;
+          }
+          
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+          }
+          
+         
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+          .d-flex{
+            margin-top: 65px;
+           
+          }
+          .btn{
+            margin-top: 15px;
+            margin-left: 410px;
+            background-color: rgb(15, 65, 145);
+            color: rgb(249, 251, 254)
+          }
+          .btn1{
+            margin-left: 70px;
+            height: 30px;
+            width: 80px;
+            border-radius: 10px;
+            background-color: rgb(22, 55, 103);
+            color: rgb(242, 249, 249);
+          }
+          .btn1:hover{
+            background: rgb(39, 68, 182);
+            color: rgb(242, 243, 246);
+          }
+          
+          .form-group{
+            margin-top: 10px;
+          }
+          
+  .badges-container {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px; 
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .logoo img{
+    {% comment %} position:fixed; {% endcomment %}
+    height:60px;
+    width:auto;
+    justify-items:center;
+    justify-content:center
+    display:center;
+    margin-bottom:40px;
+    {% comment %} margin-right: 850px; {% endcomment %}
+}   
+.logoo{
+    color: #fff;
+    pointer-events: none;
+    margin-right: 590px;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="na">
+          <href="#" class="logoo"><img  src="{% static "images/l.png" %}">
+        </nav>
+        <nav class="navigation"> 
+          <a href="{% url 'teacher_options' subject %}" >Go To Options</a>
+        <a href="#" >About Us</a>
+        <a href="/Contact us" >Contact us</a>
+        <a href="#" class="badge dropdown-toggle align-items-center p-2 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="rounded-circle me-1" width="25" height="25" src="{% static 'images/jb.jpeg' %}" alt="">
+         204006
+      </a>
+      <ul style="color:blue;" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item" href="/Log out">Log out</a></li>
+      </ul>
+      <div class="dropdown"> 
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+         SORT STUDENTS
+        </button>
+        <form class="dropdown-menu p-4"  method="post" action="{% url 'sort_students' subject %}">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="operator" class="form-label">SELECT OPERATOR</label>
+<br>
+          <div class="form-group">
+            <select class="form-control" name="operator" id="operator">
+              <option class="options" value="gt">Greater Than</option>
+              <option class="options" value="lt">Less Than</option>
+            </select>
+          </div>
+<br>
+          <div class="mb-3">
+            <label for="value" class="form-label">ENTER VALUE</label>
+            <input type="number" name="value" class="form-control" id="value" placeholder="">
+          </div>
+          <button type="submit" class="btn1 btn-primary">SORT</button>
+          
+        </form> 
+      </div>
+        </nav>
+        
+      </header>
+      <br><br><br><br>
+     
+    
+      <div class="badges-container">
+{% for student in students %}
+<div class="badge d-flex align-items-center p-2 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">
+    
+      <a class="login-btn" href="{% url 'student_profile' student.Name subject %}"><img class="rounded-circle me-1" width="50" height="50" src="{{ student.photo.url }}" alt=""></a>
+      {{ student.Roll_number }}
+   
+  </div>
+  {% endfor %}
+</div>
+
+
+
+<script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script>
+        
+</body>
+</html>
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SUBJECTS</title>
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+	<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body,html{
+        background: rgba(108,185,231,255);
+        min-height: 100vh;
+        overflow: hidden;
+        overflow-y:scroll;
+    }
+    header{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px 100px;
+      display: flex;
+      z-index: 100;
+      height:100px;
+      background:#467db5;
+    }
+    .logo{
+      font-size: 2em;
+        color: #fff;
+        pointer-events: none;
+        margin-right: 870px;
+    }
+    
+    .navigation a{
+      text-decoration: none;
+          color: #fff;
+          padding: 2px 20px;
+          border-radius: 20px;
+          margin-right 4px;
+          font-weight: 600;
+          margin-top:12px;
+    }
+    
+    .navigation a:hover,
+    .navigation a.active {
+      background: rgb(63, 90, 201);
+      color:navy;
+    }
+    
+    /* khhgdcfw */
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    
+    
+    h1{
+      text-align: center;
+      margin-top: 150px;
+      font-size: 2.5rem;
+      color: #ffffff;
+    }
+    
+    .all-login{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .login{
+      overflow: hidden;
+      background: #afd1f3;
+      color: #162f61;
+      text-align: center;
+      width: 350px;
+      height: 200px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.2rem;
+      margin: 2.5rem;
+        margin-top: 30px;
+    }
+    
+    .login .login-title, .login .login-price{
+      font-size: 18px;
+    }
+    
+    /* .login:hover img{
+      scale:  1.1;
+    } */
+    
+    .login:hover {
+      box-shadow: 5px 15px 25px #b1c3db;
+    }
+    
+    /* .login img {
+      height: 200px;
+      margin: 1rem;
+      transition: all 0.3s;
+    } */
+    
+    .login a:link, .login a:visited{
+      color: #ececec;
+      display: inline-block;
+      text-decoration: none;
+      background-color: #062b48;
+      padding: 1.2rem 3rem;
+      border-radius: 1rem;
+      margin-top: 1rem;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+    
+    .login a:hover{
+      transform: scale(1.1);
+    }
+    .logoo img{
+      {% comment %} position:fixed; {% endcomment %}
+      height:60px;
+      width:auto;
+      justify-items:center;
+      justify-content:center
+      display:center;
+      margin-bottom:40px;
+      {% comment %} margin-right: 850px; {% endcomment %}
+  }   
+  .logoo{
+      color: #fff;
+      pointer-events: none;
+      margin-right: 750px;
+  }
+    </style>
+</head>
+<body style="background-color: rgba(108,185,231,255);">
+	<header>
+		<nav class="na">
+      <href="#" class="logoo"><img  src="{% static "images/l.png" %}">
+		</nav>
+		<nav class="navigation">
+		<a href="#" >About Us</a>
+    <a href="/Contact us" >Contact us</a>    
+    <a href="#" class="badge dropdown-toggle align-items-center p-2 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      <img class="rounded-circle me-1" width="25" height="25" src="{% static 'images/jb.jpeg' %}" alt="">
+     204006
+  </a>
+  <ul style="color:blue;" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="/Log out">Log out</a></li>
+  </ul>
+		</nav>
+	</header>
+    <h1><b style="font-size:3rem;">OPTIONS</b></h1>
+    <div class="all-login">
+        <div class="login">
+            <div class="login-info">
+                <h4 class="login-title"><b>FOR ATTENDANCE</b>
+                </h4>
+                <a class="login-btn" href="{% url 'view_attendance' Name subject %}">CLICK HERE</a>
+            </div>
+        </div>
+        <div class="login">
+            <div class="login-info">
+                <h4 class="login-title"><b>FOR MONTHLY REPORT</b>
+                </h4>
+                <a class="login-btn" href="{% url 'monthly_report' Name subject %}">CLICK HERE</a>
+            </div>
+        </div>
+        <div class="login">
+            <div class="login-info">
+                <h4 class="login-title"><b>FOR WEEKLY REPORT</b>
+                </h4>
+                <a class="login-btn" href="{% url 'weekly_report' Name subject %}">CLICK HERE</a>
+            </div>
+        </div>
+        <div class="login">
+            <div class="login-info">
+                <h4 class="login-title"><b>FOR CUSTOM REPORT</b>
+                </h4>
+                <a class="login-btn" href="{% url 'report' Name subject%}">CLICK HERE</a>
+            </div>
+        </div>
+        <script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script> 
+</body>
+</html>

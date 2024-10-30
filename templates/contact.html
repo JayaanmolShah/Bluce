@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body,html{
+        background: rgba(108,185,231,255);
+        min-height: 100vh;
+        background-image: url('{% static "images/right_boy.jpg" %}')
+    }
+    header{
+        position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    z-index: 100;
+    height:100px;
+    background:#467db5;
+    }
+    {% comment %} .na{
+        font-size: 2em;
+        color: #fff;
+        margin-right: 750px;
+  } {% endcomment %}
+  .badge{
+    width:120px;
+  }
+.logo{
+    font-size: 2em;
+    color: #fff;
+    pointer-events: none;
+    margin-right: 790px;
+}
+
+.navigation a{
+    text-decoration: none;
+        color: #fff;
+        padding: 2px 20px;
+        border-radius: 20px;
+        margin-right 4px;
+        font-weight: 600;
+        margin-top:12px;
+
+}
+.a1{
+    margin-right: 5px;
+   
+}
+.navigation a:hover,
+.navigation a.active {
+    background:rgba(108,185,231,255);
+        color: navy;
+}
+    /* hchdebwl */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    
+    .container{
+        min-height: 100vh;
+        background: #08071d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url('{% static "images/right_boy.jpg" %}') no-repeat center center/cover;
+        
+    }
+    
+    .container form{
+        width: 670px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+        border-radius: 15px;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        flex-wrap: wrap;
+    }
+    
+    .container form h1{
+        color: #fff;
+        font-weight: 500;
+        margin-top: 20px;
+        width: 500px;
+        text-align: center;
+    }
+    
+    .container form input{
+        width: 290px;
+        height: 40px;
+        padding-left: 10px;
+        outline: none;
+        border: none;
+        font-size: 15px;
+        margin-bottom: 10px;
+        background: none;
+        border-bottom: 2px solid #fff;
+    }
+    
+    .container form input::placeholder{
+        color: #ddd;
+    }
+    
+    .container form #lastName,
+    .container form #mobile{
+        margin-left: 20px;
+    }
+    
+    .container form h4{
+        color: #fff;
+        font-weight: 300;
+        width: 600px;
+        margin-top: 20px;
+    }
+    
+    .container form textarea{
+        background: none;
+        border: none;
+        border-bottom: 2px solid #fff;
+        color: #fff;
+        font-weight: 200;
+        font-size: 15px;
+        padding: 10px;
+        outline: none;
+        min-width: 600px;
+        max-width: 600px;
+        min-height: 80px;
+        max-height: 80px;
+    }
+    
+    textarea::-webkit-scrollbar{
+        width: 1em;
+    }
+    
+    textarea::-webkit-scrollbar-thumb{
+        background-color: rgba(194,194,194,0.713);
+    }
+    
+    .container form #button{
+        border: none;
+        background: #fff;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #333;
+        width: 100px;
+        padding: 0;
+        margin-right: 500px;
+        margin-bottom: 30px;
+        transition: 0.3s;
+    }
+    
+    .container form #button:hover{
+        opacity: 0.7;
+    }
+    span{
+        color: #fff;
+        font-size: middle;
+        {% comment %} display: flex; {% endcomment %}
+        {% comment %} justify-content: center; {% endcomment %}
+        padding: 5px 0 5px 0;
+        position:fixed;
+    }
+    .logoo img{
+        {% comment %} position:fixed; {% endcomment %}
+        height:60px;
+        width:auto;
+        justify-items:center;
+        justify-content:center
+        display:center;
+        margin-bottom:40px;
+        {% comment %} margin-right: 850px; {% endcomment %}
+    }   
+    .logoo{
+        color: #fff;
+        pointer-events: none;
+        margin-right: 750px;
+    }
+    </style>
+</head>
+<body style="background-color: rgba(108,185,231,255);">
+	<header>
+		<nav class="na">
+            <href="#" class="logoo"><img  src="{% static "images/l.png" %}">
+		</nav>
+		<nav class="navigation">
+      <a href="/About us" >About Us</a>
+      <a href="/Log in " >Login</a>
+      <a href="/Contact us" >Contact us</a>
+     
+		</nav>
+	</header>
+<body>
+    <div class="container">
+        <form method="post" action="/Contact us">
+          {% csrf_token %}
+            <h1>Contact Us Form</h1>
+            <input type="text" id="firstName" name="Firstname" placeholder="First Name" required>
+            <input type="text" id="lastName" name="Lastname" placeholder="Last Name" required>
+            <input type="email" id="Email" name="Email" placeholder="Email" required>
+            <input type="text" id="mobile" name="mobile" placeholder="Mobile" required>
+            <h4>Type Your Message Here...</h4>
+            <textarea name="Experience" rows="3" required></textarea>
+            <input type="submit" value="Send"  id="button">
+        </form>
+    </div>
+    <script src="{% static 'js/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
