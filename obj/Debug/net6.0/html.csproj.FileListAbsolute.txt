@@ -1,0 +1,16 @@
+D:\jaya\html\bin\Debug\net6.0\html.exe
+D:\jaya\html\bin\Debug\net6.0\html.deps.json
+D:\jaya\html\bin\Debug\net6.0\html.runtimeconfig.json
+D:\jaya\html\bin\Debug\net6.0\html.dll
+D:\jaya\html\bin\Debug\net6.0\ref\html.dll
+D:\jaya\html\bin\Debug\net6.0\html.pdb
+D:\jaya\html\obj\Debug\net6.0\html.GlobalUsings.g.cs
+D:\jaya\html\obj\Debug\net6.0\html.csproj.AssemblyReference.cache
+D:\jaya\html\obj\Debug\net6.0\html.GeneratedMSBuildEditorConfig.editorconfig
+D:\jaya\html\obj\Debug\net6.0\html.AssemblyInfoInputs.cache
+D:\jaya\html\obj\Debug\net6.0\html.AssemblyInfo.cs
+D:\jaya\html\obj\Debug\net6.0\html.csproj.CoreCompileInputs.cache
+D:\jaya\html\obj\Debug\net6.0\html.dll
+D:\jaya\html\obj\Debug\net6.0\ref\html.dll
+D:\jaya\html\obj\Debug\net6.0\html.pdb
+D:\jaya\html\obj\Debug\net6.0\html.genruntimeconfig.cache
